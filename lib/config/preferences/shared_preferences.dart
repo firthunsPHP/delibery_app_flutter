@@ -1,6 +1,6 @@
 
 
-import 'package:delibery_app/Models/User.dart';
+import 'package:delibery_app/Models/user.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class UserPreferences{

@@ -1,5 +1,5 @@
 import 'package:delibery_app/config/colors/colors.dart';
-import 'package:delibery_app/widgets/backButton.dart';
+import 'package:delibery_app/Widgets/backButton.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -74,9 +74,9 @@ class _LoginPageState extends State<LoginPage> {
                           key: keyForm,
                           child:  Column(
                             children: [
-                              _emailinput(),
-                              _passwordInput(),
-                              _loginButton(),
+                              // _emailinput(),
+                              // _passwordInput(),
+                              // _loginButton(),
                             ],
                           ),
                         ),

@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:flutter/foundation.dart';
+
 class User{
   int? id;
   String? email;
@@ -14,7 +14,7 @@ class User{
   factory User.fromMap(Map<String, dynamic> data) => User(
     id: data['id'] as int?,
     email: data['email'] as String?,
-    roles: data['roles'] as List<String>?,
+    roles: data['roles'] as List<dynamic>?,
     password: data['password'] as String?,
     token: data['token'] as String?
 

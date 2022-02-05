@@ -1,6 +1,5 @@
 
-
-import 'package:delibery_app/Models/user.dart';
+import 'package:delibery_app/models/user.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class UserPreferences{
@@ -8,7 +7,7 @@ class UserPreferences{
 
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     prefs.setString('token', user.token!);
-    prefs.setInt('user_id', user.id!);
+    prefs.setInt('id_user', user.id!);
 
     return true;
   }

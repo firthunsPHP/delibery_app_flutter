@@ -1,4 +1,5 @@
 
+import 'package:delibery_app/pages/comenzar_pedido/provider/direcciones_provider.dart';
 import 'package:delibery_app/pages/login_page/provider/login_provider.dart';
 import 'package:delibery_app/pages/register_page/provider/register_provider.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +22,8 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (_) => LoginProvider()),
         ChangeNotifierProvider(create: (_) => UserProvider()),
-        ChangeNotifierProvider(create: (_) => RegisterProvider())
+        ChangeNotifierProvider(create: (_) => RegisterProvider()),
+        ChangeNotifierProvider(create: (_) => DireccionesProvider())
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

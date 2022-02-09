@@ -68,7 +68,7 @@ class _LoginPageState extends State<LoginPage> {
                                 fontSize: 26.0),
                           ),
                           Text(
-                            'Accede a tu cuenta',
+                            'Selecciona una direccion y el dia y hora de reparto',
                             style: TextStyle(
                                 color: gris,
                                 fontWeight: FontWeight.w500,

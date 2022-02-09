@@ -8,4 +8,7 @@ class Api{
 
     static const register= baseUrl + '/user/create';
       static const clienteCreate = baseUrl + '/cliente/create';
+      static const provincias = baseUrl + '/provincias';
+      static const municipios = baseUrl + '/municipios';
 }
+

@@ -58,7 +58,7 @@ class WelcomePage extends StatelessWidget {
                 width:  ancho * 0.9,
                 height: alto *0.057,
                 child: ElevatedButton(
-                  onPressed:  ()=> Navigator.pushNamed(context,'login'),
+                  onPressed:  ()=> Navigator.pushNamed(context,'comenzar'),
                   style: ElevatedButton.styleFrom(
                     primary: Theme.of(context).accentColor,
                     shape: RoundedRectangleBorder(

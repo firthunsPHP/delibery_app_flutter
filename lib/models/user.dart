@@ -8,7 +8,13 @@ class User {
   String? password;
   String? token;
 
-  User({this.id, this.email, this.roles, this.password, this.token, this.cliente});
+  User(
+      {this.id,
+      this.email,
+      this.roles,
+      this.password,
+      this.token,
+      this.cliente});
 
   factory User.fromMap(Map<String, dynamic> data) => User(
       id: data['id'] as int?,
@@ -19,13 +25,13 @@ class User {
       token: data['token'] as String?);
 
   Map<String, dynamic> toMap() => {
-    'id': id,
-    'cliente': cliente,
-    'email': email,
-    'roles': roles,
-    'password': password,
-    'token': token
-  };
+        'id': id,
+        'cliente': cliente,
+        'email': email,
+        'roles': roles,
+        'password': password,
+        'token': token
+      };
 
   /// `dart:convert`
   ///

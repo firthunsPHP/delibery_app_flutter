@@ -1,34 +1,34 @@
-import 'package:delibery_app/Widgets/backButton.dart';
 import 'package:delibery_app/config/colors/colors.dart';
 import 'package:delibery_app/pages/comenzar_pedido/provider/direcciones_provider.dart';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
+
 import 'package:provider/provider.dart';
 
-import 'modales/Add_direccion.dart';
-
+import 'modales/add_direccion.dart';
 
 class ComenzarPedido extends StatefulWidget {
-  const ComenzarPedido({Key? key}) : super(key: key);
+  ComenzarPedido({Key? key}) : super(key: key);
 
   @override
-  _ComenzarPedidoState createState() => _ComenzarPedidoState();
+  State<ComenzarPedido> createState() => _ComenzarPedidoState();
 }
 
 class _ComenzarPedidoState extends State<ComenzarPedido> {
-
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    DireccionesProvider provider = Provider.of<DireccionesProvider>(context, listen: false);
+    DireccionesProvider provider =
+    Provider.of<DireccionesProvider>(context, listen: false);
     provider.getProvincias();
   }
 
-
   @override
   Widget build(BuildContext context) {
-
     var ancho = MediaQuery.of(context).size.width;
     var alto = MediaQuery.of(context).size.height;
 
@@ -49,10 +49,6 @@ class _ComenzarPedidoState extends State<ComenzarPedido> {
                       height: alto * 0.5,
                       fit: BoxFit.cover,
                       image: AssetImage('assets/images/login-fondo.jpeg')),
-                  Container(
-                    child: backButton(Colors.white, context),
-                    margin: EdgeInsets.only(top: 50.0),
-                  )
                 ],
               ),
               Transform.translate(
@@ -68,7 +64,7 @@ class _ComenzarPedidoState extends State<ComenzarPedido> {
                       child: Column(
                         children: [
                           Text(
-                            'Bienvenido',
+                            'Comienza tu pedido',
                             style: TextStyle(
                                 color: Theme.of(context).primaryColor,
                                 fontWeight: FontWeight.bold,
@@ -81,25 +77,23 @@ class _ComenzarPedidoState extends State<ComenzarPedido> {
                                 fontWeight: FontWeight.w500,
                                 fontSize: 13.0),
                           ),
-
                           Container(
                             margin: EdgeInsets.only(top: 20.0),
                             child: Align(
                               alignment: Alignment.centerRight,
                               child: GestureDetector(
                                 onTap: () => {
-                                      showMaterialModalBottonSheet(
-                                        expand: true,
-                                        context: (context) => AddDireccion(),
-                                        builder: builder
-                                      )
+                                  showMaterialModalBottomSheet(
+                                    expand: false,
+                                    context: context,
+                                    builder: (context) => AddDireccion(),
+                                  )
                                 },
-                                child: Text('Crear nueva dirección',
-                                style: TextStyle(
-                                  color: Colors.green,
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 12.0)
-                                ),
+                                child: Text('Crear nueva direccion',
+                                    style: TextStyle(
+                                        color: Colors.green,
+                                        fontWeight: FontWeight.w400,
+                                        fontSize: 12.0)),
                               ),
                             ),
                           ),
@@ -109,34 +103,32 @@ class _ComenzarPedidoState extends State<ComenzarPedido> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
-                                  'Dirección de envio',
+                                  'Direccion de envio',
                                   style: TextStyle(
                                       color: gris,
                                       fontWeight: FontWeight.w500,
                                       fontSize: 15.0),
                                 ),
-                               // TODO: consumir con la o la direcciones o un boton para
-                                // seleccionar la direccion desde un modal
-
                               ],
                             ),
                           ),
+                          //TODO: Cosumer con o la direcciones o un boton para
+                          // seleccionar la direccion desde un modal
                           Container(
-                            margin: EdgeInsets.only(top:20),
+                            margin: EdgeInsets.only(top: 20.0),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text('Fecha de entrega',
-                                style: TextStyle(
-                                  color: gris,
-                                  fontWeight: FontWeight.w500,
-                                  fontSize: 15.0
-                                ))
+                                    style: TextStyle(
+                                        color: gris,
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 15.0)),
                               ],
                             ),
                           ),
-                          // TODO: consumir con la o la fecha o un boton para
-                          // seleccionar la direccion desde un modal
+                          //TODO: Cosumer con o la fecha o un boton para
+                          // seleccionar la fecha desde un modal
                         ],
                       ),
                     ),

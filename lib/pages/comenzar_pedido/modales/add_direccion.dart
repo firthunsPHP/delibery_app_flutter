@@ -46,7 +46,7 @@ class _AddDireccionState extends State<AddDireccion> {
                     ],
                   ),
                   _codPostal(),
-                  _addButton(),
+                  // _addButton(),
                 ],
               ))),
       ));
